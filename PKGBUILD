@@ -1,6 +1,6 @@
 
 pkgname=cachyos-fish-config
-pkgver=1
+pkgver=2
 pkgrel=1
 pkgdesc="Fish configuration of CachyOS"
 arch=(any)
@@ -27,7 +27,7 @@ pkgver() {
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 package() {
-	cd $srcdir/$pkgname-$pkgver
+	cd $srcdir/$pkgname
 	install -D -m644 config.fish $pkgdir/etc/skel/.config/fish/config.fish
 	install -D -m644 conf.d/done.fish $pkgdir/etc/skel/.config/fish/conf.d/done.fish
 }
