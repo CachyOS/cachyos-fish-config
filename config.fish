@@ -146,7 +146,7 @@ alias jctl="journalctl -p 3 -xb"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 
-## Run paleofetch if session is interactive
+## Run fastfetch if session is interactive
 if status --is-interactive
-   neofetch
+   fastfetch
 end
