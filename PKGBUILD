@@ -1,6 +1,6 @@
 
 pkgname=cachyos-fish-config
-pkgver=2
+pkgver=r3.d82caf9
 pkgrel=1
 pkgdesc="Fish configuration of CachyOS"
 arch=(any)
@@ -12,11 +12,10 @@ depends=('bat'
 	'fish'
 	'fish-autopair'
 	'fzf'
-	'fisher-git'
-	'fish-pure-prompt-git'
+	'fisher'
+	'fish-pure-prompt'
 	'nerd-fonts-fantasque-sans-mono'
 	'tealdeer'
-	'find-the-command-git'
 	'pkgfile')
 makedepends=('git')
 conflicts=('kwin-scripts-window-colors')

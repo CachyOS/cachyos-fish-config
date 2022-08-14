@@ -1,0 +1,24 @@
+pkgbase = cachyos-fish-config
+	pkgdesc = Fish configuration of CachyOS
+	pkgver = r3.d82caf9
+	pkgrel = 1
+	url = https://gitlab.com/cachyos/themes-and-settings/theme/cachyos-fish-config
+	arch = any
+	license = MIT
+	makedepends = git
+	depends = bat
+	depends = exa
+	depends = expac
+	depends = fish
+	depends = fish-autopair
+	depends = fzf
+	depends = fisher
+	depends = fish-pure-prompt
+	depends = nerd-fonts-fantasque-sans-mono
+	depends = tealdeer
+	depends = pkgfile
+	conflicts = kwin-scripts-window-colors
+	source = git+https://gitlab.com/cachyos/themes-and-settings/theme/cachyos-fish-config.git
+	sha256sums = SKIP
+
+pkgname = cachyos-fish-config
