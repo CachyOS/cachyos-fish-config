@@ -1,10 +1,10 @@
 
 pkgname=cachyos-fish-config
-pkgver=r3.d82caf9
+pkgver=4
 pkgrel=1
 pkgdesc="Fish configuration of CachyOS"
 arch=(any)
-url="https://gitlab.com/cachyos/themes-and-settings/theme/$pkgname"
+url="https://github.com/CachyOS/$pkgname"
 license=('MIT')
 depends=('bat'
 	'exa'
@@ -21,10 +21,7 @@ makedepends=('git')
 conflicts=('kwin-scripts-window-colors')
 source=("git+$url.git")
 sha256sums=('SKIP')
-pkgver() {
-	cd "$srcdir/$pkgname"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
+
 package() {
 	cd $srcdir/$pkgname
 	install -D -m644 config.fish $pkgdir/etc/skel/.config/fish/config.fish
