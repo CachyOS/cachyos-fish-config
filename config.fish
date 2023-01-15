@@ -13,6 +13,10 @@ end
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
+## Enable Wayland support for Mozilla app if session type is Wayland
+if [ "$XDG_SESSION_TYPE" = "wayland" ]
+    set -gx MOZ_ENABLE_WAYLAND 1
+end
 
 ## Environment setup
 # Apply .profile: use this to put fish compatible .profile stuff in
