@@ -25,8 +25,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]
     set -gx CLUTTER_BACKEND wayland
     set -gx ECORE_EVAS_ENGINE wayland_egl
     set -gx ELM_ENGINE wayland_egl
-    set -gx SAL_USE_VCLPLUGIN gtk3
-    set -gx SDL_VIDEODRIVER wayland    
+    set -gx SAL_USE_VCLPLUGIN gtk3   
 end
 
 ## Environment setup
