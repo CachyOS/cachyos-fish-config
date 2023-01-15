@@ -13,9 +13,20 @@ end
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-## Enable Wayland support for Mozilla app if session type is Wayland
+## Enable Wayland support for different applications
 if [ "$XDG_SESSION_TYPE" = "wayland" ]
+    set -gx WAYLAND 1
+    set -gx QT_QPA_PLATFORM wayland-egl
+    set -gx GDK_BACKEND wayland
+    set -gx MOZ_DBUS_REMOTE 1
     set -gx MOZ_ENABLE_WAYLAND 1
+    set -gx _JAVA_AWT_WM_NONREPARENTING 1
+    set -gx BEMENU_BACKEND wayland
+    set -gx CLUTTER_BACKEND wayland
+    set -gx ECORE_EVAS_ENGINE wayland_egl
+    set -gx ELM_ENGINE wayland_egl
+    set -gx SAL_USE_VCLPLUGIN gtk3
+    set -gx SDL_VIDEODRIVER wayland    
 end
 
 ## Environment setup
