@@ -24,8 +24,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]
     set -gx BEMENU_BACKEND wayland
     set -gx CLUTTER_BACKEND wayland
     set -gx ECORE_EVAS_ENGINE wayland_egl
-    set -gx ELM_ENGINE wayland_egl
-    set -gx SAL_USE_VCLPLUGIN gtk3   
+    set -gx ELM_ENGINE wayland_egl 
 end
 
 ## Environment setup
