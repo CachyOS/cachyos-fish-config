@@ -1,6 +1,6 @@
 
 pkgname=cachyos-fish-config
-pkgver=4
+pkgver=5
 pkgrel=1
 pkgdesc="Fish configuration of CachyOS"
 arch=(any)
