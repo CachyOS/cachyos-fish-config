@@ -17,14 +17,14 @@ set -U __done_notification_urgency_level low
 if [ "$XDG_SESSION_TYPE" = "wayland" ]
     set -gx WAYLAND 1
     set -gx QT_QPA_PLATFORM 'wayland;xcb'
-    set -gx GDK_BACKEND wayland
+    set -gx GDK_BACKEND 'wayland;x11'
     set -gx MOZ_DBUS_REMOTE 1
     set -gx MOZ_ENABLE_WAYLAND 1
     set -gx _JAVA_AWT_WM_NONREPARENTING 1
     set -gx BEMENU_BACKEND wayland
     set -gx CLUTTER_BACKEND wayland
     set -gx ECORE_EVAS_ENGINE wayland_egl
-    set -gx ELM_ENGINE wayland_egl 
+    set -gx ELM_ENGINE wayland_egl
 end
 
 ## Environment setup
@@ -90,8 +90,8 @@ end
 function copy
     set count (count $argv | tr -d \n)
     if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
+    set from (echo $argv[1] | trim-right /)
+    set to (echo $argv[2])
         command cp -r $from $to
     else
         command cp $argv
@@ -128,13 +128,13 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias hw='hwinfo --short'                                   # Hardware Info
 alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB
-alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'          # List amount of -git packages
 
-# Get fastest mirrors 
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist" 
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist" 
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist" 
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist" 
+# Get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # Help people new to Arch
 alias apt='man pacman'
