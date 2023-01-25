@@ -17,7 +17,6 @@ set -U __done_notification_urgency_level low
 if [ "$XDG_SESSION_TYPE" = "wayland" ]
     set -gx WAYLAND 1
     set -gx QT_QPA_PLATFORM 'wayland;xcb'
-    set -gx GDK_BACKEND wayland
     set -gx MOZ_DBUS_REMOTE 1
     set -gx MOZ_ENABLE_WAYLAND 1
     set -gx _JAVA_AWT_WM_NONREPARENTING 1
