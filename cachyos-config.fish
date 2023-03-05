@@ -13,6 +13,15 @@ if type "qtile" >> /dev/null 2>&1
    set -x QT_QPA_PLATFORMTHEME "qt5ct"
 end
 
+# Check if Hyprland is installed
+if type Hyprland > /dev/null
+    # Check if DISPLAY is empty and XDG_VTNR is 1
+    if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]
+        # Launch Hyprland
+        exec Hyprland
+    end
+end
+
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
