@@ -3,14 +3,18 @@ source /usr/share/cachyos-fish-config/conf.d/done.fish
 
 
 ## Set values
-# Hide welcome message
-set fish_greeting
-set VIRTUAL_ENV_DISABLE_PROMPT "1"
+## Run fastfetch as welcome message
+function fish_greeting
+    fastfetch
+end
+
+# Format man pages
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 
 ## Export variable need for qt-theme
 if type "qtile" >> /dev/null 2>&1
-   set -x QT_QPA_PLATFORMTHEME "qt5ct"
+    set -x QT_QPA_PLATFORMTHEME "qt5ct"
 end
 
 # Set settings for https://github.com/franciscolourenco/done
@@ -154,9 +158,3 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
-
-## Run fastfetch if session is interactive
-if status --is-interactive
-   fastfetch
-end
