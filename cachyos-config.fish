@@ -9,8 +9,8 @@ function fish_greeting
 end
 
 # Format man pages
+set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
 
 ## Export variable need for qt-theme
 if type "qtile" >> /dev/null 2>&1
