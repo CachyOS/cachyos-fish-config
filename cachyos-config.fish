@@ -12,11 +12,6 @@ end
 set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
-## Export variable need for qt-theme
-if type "qtile" >> /dev/null 2>&1
-    set -x QT_QPA_PLATFORMTHEME "qt5ct"
-end
-
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
