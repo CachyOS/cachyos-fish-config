@@ -1,7 +1,7 @@
 
 pkgname=cachyos-fish-config
 pkgver=6
-pkgrel=1
+pkgrel=2
 pkgdesc="Fish configuration of CachyOS"
 arch=(any)
 url="https://github.com/CachyOS/$pkgname"
