@@ -152,8 +152,13 @@ function __done_is_process_window_focused
         string match --quiet --regex "^true" (swaymsg -t get_tree | jq ".. | objects | select(.id == "$__done_initial_window_id") | .visible")
         return $status
     else if test -n "$HYPRLAND_INSTANCE_SIGNATURE"
-        and test $__done_initial_window_id -eq (hyprctl activewindow | awk '/^\tpid: / {print $2}')
-        return $status
+        set window_pid (hyprctl activewindow | awk '/^\tpid: / {print $2}')
+        if test -n "$window_pid"
+            and test $__done_initial_window_id -eq $window_pid
+            return $status
+        else
+            return 1
+        end
     else if test "$__done_initial_window_id" != "$__done_focused_window_id"
         return 1
     end
