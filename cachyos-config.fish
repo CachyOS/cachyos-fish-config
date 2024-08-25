@@ -28,6 +28,7 @@ if [ "$XDG_SESSION_TYPE" = "wayland" ]
     set -gx CLUTTER_BACKEND wayland
     set -gx ECORE_EVAS_ENGINE wayland_egl
     set -gx ELM_ENGINE wayland_egl
+    set -gx ELECTRON_OZONE_PLATFORM_HINT wayland
 end
 
 ## Environment setup
