@@ -121,3 +121,43 @@ alias jctl="journalctl -p 3 -xb"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+# Print aliases to console
+alias cachy="echo -e 'cachy aliases' ;\
+	echo -e '\t backup \t make a backup of a single file' ;\
+	echo -e '\t copy \t\t copy srcdir destdir' ;\
+	echo -e 'Replace ls with eza' ;\
+	echo -e '\t ls \t\t preferred listing' ;\
+	echo -e '\t la \t\t all files and dirs' ;\
+	echo -e '\t ll \t\t long format' ;\
+	echo -e '\t lt \t\t tree listing' ;\
+	echo -e '\t l. \t\t show only dotfiles' ;\
+echo -e 'Common use' ;\
+	echo -e '\t grubup \t update grub configuration' ;\
+	echo -e '\t tarnow \t compress' ;\
+	echo -e '\t untar \t\t extract' ;\
+	echo -e '\t psmem \t\t sort processes by memory usage' ;\
+	echo -e '\t psmem10 \t 10 top processes by memory usage' ;\
+	echo -e '\t .. \t\t cd ..' ;\
+	echo -e '\t ... \t\t cd ../..' ;\
+	echo -e '\t .... \t\t cd ../../..' ;\
+	echo -e '\t ..... \t\t cd ../../../..' ;\
+	echo -e '\t ...... \t cd ../../../../..' ;\
+	echo -e '\t dir' ;\
+	echo -e '\t vdir' ;\
+	echo -e '\t grep \t\t with colors' ;\
+	echo -e '\t fgrep \t\t with colors' ;\
+	echo -e '\t egrep \t\t with colors' ;\
+	echo -e '\t hw \t\t Hardware Info' ;\
+	echo -e '\t big \t\t Sort installed packages according to size in MB' ;\
+	echo -e '\t gitpkg \t List amount of -git packages' ;\
+	echo -e '\t update \t rate mirrors and update system' ;\
+	echo -e '\t mirror \t Get fastest mirrors' ;\
+echo -e 'Help people new to Arch' ;\
+	echo -e '\t apt \t\t man pacman' ;\
+	echo -e '\t apt-get \t\t man pacman' ;\
+	echo -e '\t tb \t\t post content to termbin.com' ;\
+echo -e 'Other ';\
+	echo -e '\t cleanup \t Cleanup orphaned packages' ;\
+	echo -e '\t jctl \t\t Get the error messages from journalctl' ;\
+	echo -e '\t rip \t\t Recent installed packages'"
