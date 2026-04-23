@@ -80,7 +80,7 @@ alias ls='eza -al --color=always --group-directories-first --icons=always' # pre
 alias la='eza -a --color=always --group-directories-first --icons=always'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first --icons=always'  # long format
 alias lt='eza -aT --color=always --group-directories-first --icons=always' # tree listing
-alias l.="eza -a | grep -e '^\.'"                                     # show only dotfiles
+alias l.="eza -al --ignore-glob '[!.]*' --color=always --group-directories-first --icons=always" # show only dotfiles
 
 # Common use
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
