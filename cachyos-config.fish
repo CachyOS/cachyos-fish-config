@@ -9,7 +9,7 @@ end
 # Interactive commands to avoid messing with system functions and libraries
 if status is-interactive
   # Append common libraries to path
-  fish_add_path ~/.local/bin ~/.cargo/bin ~/Applications/depot_tools
+  fish_add_path ~/.local/bin ~/.cargo/bin
 
   # Set up homebrew environment if homebrew is present
   # Brew should only be interactive as it messes with system libraries like python otherwise
