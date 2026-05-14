@@ -1,10 +1,21 @@
 ﻿## Source from conf.d before our fish config
 source /usr/share/cachyos-fish-config/conf.d/done.fish
 
-## Set values
 ## Run fastfetch as welcome message
 function fish_greeting
     fastfetch
+end
+
+# Interactive commands to avoid messing with system functions and libraries
+if status is-interactive
+  # Append common libraries to path
+  fish_add_path ~/.local/bin ~/.cargo/bin
+
+  # Set up homebrew environment if homebrew is present
+  # Brew should only be interactive as it messes with system libraries like python otherwise
+  if test -f /home/linuxbrew/.linuxbrew/bin/brew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+  end
 end
 
 # Format man pages
@@ -20,9 +31,6 @@ set -U __done_notification_urgency_level low
 if test -f ~/.fish_profile
   source ~/.fish_profile
 end
-
-# Append common directories for executable files to $PATH
-fish_add_path ~/.local/bin ~/.cargo/bin ~/Applications/depot_tools
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
