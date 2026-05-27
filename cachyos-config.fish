@@ -84,6 +84,7 @@ alias l.="eza -a | grep -e '^\.'"                                     # show onl
 
 # Common use
 alias grubup="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias limz="sudo limine update"
 alias fixpacman="sudo rm /var/lib/pacman/db.lck"
 alias tarnow='tar -acf '
 alias untar='tar -zxvf '
@@ -113,8 +114,11 @@ alias apt='man pacman'
 alias apt-get='man pacman'
 alias tb='nc termbin.com 9999'
 
-# Cleanup orphaned packages
+# Package management
+alias yeet="sudo pacman -Rns"
+alias yolo="sudo pacman -Rnsdd"
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
+alias cleancache='sudo pacman -Scc'
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
