@@ -22,7 +22,7 @@ if test -f ~/.fish_profile
 end
 
 # Append common directories for executable files to $PATH
-fish_add_path ~/.local/bin ~/.cargo/bin ~/Applications/depot_tools
+fish_add_path ~/.local/bin ~/.cargo/bin ~/Applications/depot_tools /usr/lib/qt6/bin
 
 ## Functions
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
