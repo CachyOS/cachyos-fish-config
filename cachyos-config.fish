@@ -55,7 +55,32 @@ end
 
 # Fish command history
 function history
-    builtin history --show-time='%F %T ' $argv
+    set -l subcmd
+    for arg in $argv
+        switch $arg
+            case --
+                break
+            case -h --help --save --merge --clear --clear-session --delete --append -V -M -X -D
+                set subcmd $arg
+                break
+            case '-*'
+                continue
+            case '*'
+                set subcmd $arg
+                break
+        end
+    end
+
+    switch $subcmd
+        case save merge clear clear-session delete append --save --merge --clear --clear-session --delete --append -V -M -X -D -h --help
+            builtin history $argv
+        case '*'
+            if string match -q -- '-t*' $argv; or string match -q -- '--show-time*' $argv
+                builtin history $argv
+            else
+                builtin history --show-time='%F %T ' $argv
+            end
+    end
 end
 
 function backup --argument filename
