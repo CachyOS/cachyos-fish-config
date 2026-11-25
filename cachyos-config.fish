@@ -4,7 +4,12 @@ source /usr/share/cachyos-fish-config/conf.d/done.fish
 ## Set values
 ## Run fastfetch as welcome message
 function fish_greeting
-    fastfetch
+    # Localize module keys, unless a fastfetch config file exists
+    if fastfetch --list-config-paths | string match -q '*(\*)'
+        fastfetch
+    else
+        fastfetch --key-language
+    end
 end
 
 # Format man pages
